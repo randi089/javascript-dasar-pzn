@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tipe Data Array</title>
+  </head>
+  <body>
+    <script>
+      let arrayKosong = [];
+
+      let arrayNama = ["Randi", "Febriadi", "Hebat"];
+
+      const names = [];
+      names.push("Randi");
+      names.push("Febriadi", "Hebat");
+      names.push("Fauzan", "Taufiq", "Fatwa");
+
+      console.table(names);
+
+      console.info(names[0]);
+      console.info(names[1]);
+      console.info(names[2]);
+
+      names[0] = "Programmer";
+      names[1] = "Nomor";
+      names[2] = "Satu";
+
+      console.table(names);
+
+      delete names[3];
+
+      console.table(names);
+
+      names.push("Randi Lagi");
+
+      console.table(names);
+
+      names[3] = "Diubah Lagi";
+      names.push(1, 2, 3, 4, 5);
+      names.push(["Randi", "Febriadi", "Hebat"]);
+
+      console.table(names);
+    </script>
+  </body>
+</html>

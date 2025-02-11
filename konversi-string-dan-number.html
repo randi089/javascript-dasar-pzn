@@ -20,6 +20,20 @@
       const b = 1;
       const total = a.toString() + b.toString();
       document.writeln(`<p>${total}</p>`);
+
+      document.writeln(`<p>${parseInt("1salah")}</p>`);
+      document.writeln(`<p>${parseFloat("1.1randi")}</p>`);
+
+      document.writeln(`<p>${Number("1salah")}</p>`);
+      document.writeln(`<p>${Number("1.1randi")}</p>`);
+
+      const first = Number("salah");
+      const totalNumber = first + 100;
+      document.writeln(`<p>${totalNumber}</p>`);
+
+      document.writeln(`<p>${isNaN(first)}</p>`);
+      document.writeln(`<p>${isNaN(100)}</p>`);
+      document.writeln(`<p>${isNaN(NaN)}</p>`);
     </script>
   </body>
 </html>
