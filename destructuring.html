@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // Array
+      {
+        const names = ["Randi", "Febriadi", "Hebat", "Budi", "Joko"];
+        const [firstName, middleName, lastName, ...others] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+        console.info(others);
+      }
+
+      //   Objcet
+      {
+        const person = {
+          firstName: "Randi",
+          lastName: "Febriadi",
+          address: {
+            street: "Jalan Belum Ada",
+            city: "Padang Pariaman",
+            country: "Indonesia",
+          },
+          hobby: "Game",
+          channel: "Randi Sa",
+        };
+
+        const {
+          firstName,
+          lastName,
+          address: { city, street, country },
+          ...others
+        } = person;
+        console.info(firstName);
+        console.info(lastName);
+        console.info(city);
+        console.info(street);
+        console.info(country);
+        console.info(others);
+      }
+
+      //   parameter function
+      {
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
+        }
+
+        const person = {
+          firstName: "Randi",
+          middleName: "Febriadi",
+          lastName: "Hebat",
+        };
+
+        displayPerson(person);
+      }
+
+      {
+        function sum([first, second]) {
+          return first + second;
+        }
+
+        console.info(sum([1, 1]));
+        console.info(sum([10, 10]));
+      }
+
+      //   Default value array
+      {
+        const names = ["Randi", "Fatwa", "Fauzan"];
+        const [firstName, middleName = "Febriadi", lastName = "Hebat"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      //   Default value object
+      {
+        const person = {
+          firstName: "Randi",
+          middleName: "Fatwa",
+          lastName: "Febriadi",
+        };
+
+        const { firstName, middleName = "Hebat", lastName } = person;
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      //   Object other name
+      {
+        const person = {
+          firstName: "Randi",
+          middleName: "Fatwa",
+          lastName: "Febriadi",
+        };
+
+        const { firstName: namaDepan, middleName: namaTengah = "Hebat", lastName: namaBelakang } = person;
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+      }
+    </script>
+  </body>
+</html>
